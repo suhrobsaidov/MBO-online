@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+       'number',
+       'time',
+    ];
+
+
+
+
+    public function user()
+    {
+        return $this->hasMany();
+    }
+
+
 }
