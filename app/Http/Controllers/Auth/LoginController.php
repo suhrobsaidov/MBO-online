@@ -46,7 +46,7 @@ class LoginController extends Controller
     {
         // Check validation - Note : you can change validation as per your requirements
         $this->validate($request, [
-            'phone' => 'required|digits:13',
+            'phone' => 'required|digits:9',
 
         ]);
 
