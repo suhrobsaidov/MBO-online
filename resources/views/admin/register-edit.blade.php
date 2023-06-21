@@ -25,6 +25,10 @@
                                    <label>Name</label>
                                    <input type="text" name="username" value="{{ $users->name }}" class="form-control">
                                </div>
+                               <div class="from-group">
+                                   <label>Surname</label>
+                                   <input type="text" name="surname" value="{{ $users->surname }}" class="form-control">
+                               </div>
                                <div class="form-group">
                                    <label>Give Role</label>
                                    <select name="usertype" class="form-control">

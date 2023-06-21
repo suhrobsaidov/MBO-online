@@ -16,32 +16,21 @@
                             </div>
                             <form action="/role-register" method="POST">
                              {{ csrf_field() }}
-                            
+
                             <div class="modal-body">
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Full name:</label>
                                         <input type="text" name="username" class="form-control" id="recipient-name">
                                     </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Surname:</label>
+                                    <input type="text" name="surname" class="form-control" id="recipient-name">
+                                </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Phone:</label>
                                         <input type="text" name="phone" class="form-control" id="recipient-name">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">birth date:</label>
-                                        <input type="text" name="birthdate" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">time:</label>
-                                        <input type="text" name="time" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">days:</label>
-                                        <input type="text" name="days" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">How did they know us:</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
+
                                     </div>
                                     <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -108,7 +97,7 @@
                                 <td>
                                     {{ $user->phone }}
                                 </td>
-                                
+
                                 <td>
                                     <a href="/role-edit/{{ $user->id }}" class="btn btn-success">EDIT</a>
                                 </td>
