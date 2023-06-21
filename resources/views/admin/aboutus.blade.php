@@ -1,4 +1,4 @@
-@extends('admin_panel.resources.views.layouts.master')
+@extends('layouts.master')
 
 @section('title')
     About Us
