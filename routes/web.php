@@ -27,11 +27,11 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
         return view('admin.dashboard');
     });
 
-    Route::get('/role-register', 'Admin\DashboardController@registered');
-    Route::post('/role-register', 'Admin\DashboardController@registerstore');
-    Route::get('/role-edit/{id}', 'Admin\DashboardController@registeredit');
-    Route::put('/role-register-update/{id}', 'Admin\DashboardController@registerupdate');
-    Route::delete('/role-delete/{id}' , 'Admin\DashboardController@registerdelete');
+    Route::get('/role-register', [App\Http\Controllers\Admin\DashboardController::class, 'registered'])->name('role-register');
+    Route::post('/role-register', [App\Http\Controllers\Admin\DashboardController::class, 'registerstore'])->name('role-register');
+    Route::get('/role-edit/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registeredit'])->name('role-edit');
+    Route::put('/role-register-update/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registerupdate'])->name('role-register-update');
+    Route::delete('/role-delete/{id}' , [App\Http\Controllers\Admin\DashboardController::class, 'registerdelete'])->name('role-delete');
 
 });
 
