@@ -33,5 +33,11 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::put('/role-register-update/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registerupdate'])->name('role-register-update');
     Route::delete('/role-delete/{id}' , [App\Http\Controllers\Admin\DashboardController::class, 'registerdelete'])->name('role-delete');
 
+    Route::get('/abouts' , 'Admin\AboutusController@index');
+    Route::post('/save-aboutus','Admin\AboutusController@store');
+    Route::get('/about-us/{id}','Admin\AboutusController@edit');
+    Route::put('/abouts/{id}', 'Admin\AboutusController@update');
+    Route::delete('/abouts/{id}' , 'Admin\AboutusController@delete');
+
 });
 
