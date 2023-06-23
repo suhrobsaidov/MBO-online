@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payments;
-use App\Http\Requests\StorePaymentsRequest;
-use App\Http\Requests\UpdatePaymentsRequest;
+use App\Models\Teachers;
+use App\Http\Requests\StoreTeachersRequest;
+use App\Http\Requests\UpdateTeachersRequest;
+use App\Models\User;
 
-class PaymentsController extends Controller
+class TeachersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-      $payments = Payments::all();
-      return view('payments' ,compact('payments'));
+        $teachers = User::where('usertype' , '=' ,'teachers');
+        return view('teachers' , compact('teachers'));
     }
 
     /**
@@ -29,7 +29,7 @@ class PaymentsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePaymentsRequest $request)
+    public function store(StoreTeachersRequest $request)
     {
         //
     }
@@ -37,7 +37,7 @@ class PaymentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payments $payments)
+    public function show(Teachers $teachers)
     {
         //
     }
@@ -45,7 +45,7 @@ class PaymentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payments $payments)
+    public function edit(Teachers $teachers)
     {
         //
     }
@@ -53,7 +53,7 @@ class PaymentsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePaymentsRequest $request, Payments $payments)
+    public function update(UpdateTeachersRequest $request, Teachers $teachers)
     {
         //
     }
@@ -61,7 +61,7 @@ class PaymentsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payments $payments)
+    public function destroy(Teachers $teachers)
     {
         //
     }

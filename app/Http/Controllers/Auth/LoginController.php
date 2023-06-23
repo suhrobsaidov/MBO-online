@@ -65,8 +65,11 @@ class LoginController extends Controller
         {
             return redirect('dashboard');
         }
-        else
+        elseif(Auth::user()->usertype == 'teachers')
         {
+            return redirect('teachers');
+        }
+        else{
             return redirect('home');
         }
     }

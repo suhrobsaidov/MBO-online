@@ -39,5 +39,17 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::put('/abouts/{id}',  [App\Http\Controllers\Admin\AboutusController::class, 'update'])->name('abouts');
     Route::delete('/abouts/{id}' ,  [App\Http\Controllers\Admin\AboutusController::class, 'delete'])->name('abouts');
 
+    //payments
+
+    Route::get('payments' ,[\App\Http\Controllers\PaymentsController::class , 'index']);
+    Route::post('create-payment' ,[\App\Http\Controllers\PaymentsController::class , 'store']);
+
+
+
+
+    //teachers
+    Route::get('teachers' ,[\App\Http\Controllers\TeachersController::class , 'index']);
+
+
 });
 

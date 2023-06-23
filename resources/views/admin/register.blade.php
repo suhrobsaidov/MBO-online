@@ -9,7 +9,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add info</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Добавить</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -19,22 +19,22 @@
 
                             <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Full name:</label>
+                                        <label for="recipient-name" class="col-form-label">Имя:</label>
                                         <input type="text" name="username" class="form-control" id="recipient-name">
                                     </div>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Surname:</label>
+                                    <label for="recipient-name" class="col-form-label">Фамилия:</label>
                                     <input type="text" name="surname" class="form-control" id="recipient-name">
                                 </div>
                                     <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Phone:</label>
+                                        <label for="recipient-name" class="col-form-label">Телефон:</label>
                                         <input type="text" name="phone" class="form-control" id="recipient-name">
                                     </div>
 
                                     </div>
                                     <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Send message</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
                             </div>
                             </form>
                         </div>
@@ -66,20 +66,20 @@
                                 ID
                             </th>
                             <th>
-                                Name
+                               Имя
                             </th>
                             <th>
-                                Surname
+                                Фамилия
                             </th>
                             <th>
-                                Phone number
+                               Телефон
                             </th>
                             <th>
-                                EDIT
+                                Ред.
                             </th>
 
                             <th>
-                                DELETE
+                                Удалить
                             </th>
                             </thead>
                             <tbody>
@@ -119,7 +119,7 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+<!--        <div class="col-md-12">
             <div class="card card-plain">
                 <div class="card-header">
                     <h4 class="card-title"> Table on Plain Background</h4>
@@ -246,7 +246,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     </div>
 @endsection

@@ -55,6 +55,30 @@
               <p>Студенты</p>
             </a>
           </li>
+            <li class="{{ 'payments' == request()->path() ? 'active' : '' }}">
+                <a href="/payments">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Оплата</p>
+                </a>
+            </li>
+            <li class="{{ 'Teachers' == request()->path() ? 'active' : '' }}">
+                <a href="/teachers">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Учителя</p>
+                </a>
+            </li>
+            <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
+                <a href="/role-register">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Студенты</p>
+                </a>
+            </li>
+            <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
+                <a href="/role-register">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Студенты</p>
+                </a>
+            </li>
         </ul>
       </div>
     </div>
