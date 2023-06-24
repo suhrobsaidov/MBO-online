@@ -39,11 +39,13 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::get('/about-us/{id}', [App\Http\Controllers\Admin\AboutusController::class, 'edit'])->name('about-us');
     Route::put('/abouts/{id}',  [App\Http\Controllers\Admin\AboutusController::class, 'update'])->name('abouts');
     Route::delete('/abouts/{id}' ,  [App\Http\Controllers\Admin\AboutusController::class, 'delete'])->name('abouts');
-    //for students
-    Route::get('/student-register' , [App\Http\Controllers\StudentController::class, 'index'])->name('student');
-    Route::post('/student-register', [App\Http\Controllers\StudentController::class, 'store'])->name('student-register');
-    Route::get('/student-edit/{id}', [App\Http\Controllers\StudentController::class, 'edit'])->name('student-edit');
-    Route::put('/student-register-update/{id}', [App\Http\Controllers\StudentController::class, 'update'])->name('student-register-update');
-    Route::delete('/student-delete/{id}' , [App\Http\Controllers\StudentController::class, 'delete'])->name('student-delete');
+    //payments
+    Route::get('payments' ,[\App\Http\Controllers\PaymentsController::class , 'index']);
+    Route::post('create-payment' ,[\App\Http\Controllers\PaymentsController::class , 'store']);
+    //teachers
+    Route::get('teachers' ,[\App\Http\Controllers\TeachersController::class , 'index']);
+
+
+
 });
 

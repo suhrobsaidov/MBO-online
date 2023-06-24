@@ -1,51 +1,39 @@
 @extends('layouts.master')
-
-@section('title')
-    Registered Roles
-@endsection
-
 @section('content')
+
+
+
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add info</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/student-register" method="POST">
+                <form action="/role-register" method="POST">
                     {{ csrf_field() }}
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Full name:</label>
+                            <label for="recipient-name" class="col-form-label">Имя:</label>
                             <input type="text" name="username" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Phone:</label>
+                            <label for="recipient-name" class="col-form-label">Фамилия:</label>
+                            <input type="text" name="surname" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Телефон:</label>
                             <input type="text" name="phone" class="form-control" id="recipient-name">
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">birth date:</label>
-                            <input type="text" name="birthdate" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">time:</label>
-                            <input type="text" name="time" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">days:</label>
-                            <input type="text" name="days" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">How did they know us:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
                     </div>
                 </form>
             </div>
@@ -55,8 +43,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Role Register
-                        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
+                    <h4 class="card-title"> Список Учителей
+                        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Добавить</button>
                     </h4>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -77,54 +65,43 @@
                                 ID
                             </th>
                             <th>
-                                Name
+                                Имя
                             </th>
                             <th>
-                                Phone number
+                                Фамилия
                             </th>
                             <th>
-                                Birth date
+                                Телефон
                             </th>
                             <th>
-                                Time
-                            </th>
-                            <th>
-                                Days
-                            </th>
-                            <th>
-                                EDIT
+                                Ред.
                             </th>
 
                             <th>
-                                DELETE
+                                Удалить
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($students as $student)
+                            @foreach($teachers as $user)
                                 <tr>
                                     <td>
-                                        {{ $student->id }}
+                                        {{ $user->id }}
                                     </td>
                                     <td>
-                                        {{ $student->name }}
+                                        {{ $user->name }}
                                     </td>
                                     <td>
-                                        {{ $student->phone }}
+                                        {{ $user->surname }}
                                     </td>
                                     <td>
-                                        {{ $student->birthdate }}
+                                        {{ $user->phone }}
+                                    </td>
+
+                                    <td>
+                                        <a href="/role-edit/{{ $user->id }}" class="btn btn-success">EDIT</a>
                                     </td>
                                     <td>
-                                        {{ $student->time }}
-                                    </td>
-                                    <td>
-                                        {{ $student->days }}
-                                    </td>
-                                    <td>
-                                        <a href="/student-edit/{{ $student->id }}" class="btn btn-success">EDIT</a>
-                                    </td>
-                                    <td>
-                                        <form action="/student-delete/{{ $student->id }}" method="post">
+                                        <form action="/role-delete/{{ $user->id }}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-danger">DELETE</button>
@@ -140,9 +117,4 @@
                 </div>
             </div>
         </div>
-@endsection
-
-
-@section('scripts')
-
 @endsection

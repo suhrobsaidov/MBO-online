@@ -49,19 +49,36 @@
               <p>Users</p>
             </a>
           </li>
-            <li class="{{ 'student-register' == request()->path() ? 'active' : '' }}">
-                <a href="/student-register">
-                    <i class="now-ui-icons users_single-02"></i>
-                    <p>Student</p>
-                </a>
-            </li>
           <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
                 <a href="/abouts">
                     <i class="now-ui-icons ui-1_bell-53"></i>
                     <p>Notes</p>
                 </a>
           </li>
-
+            <li class="{{ 'payments' == request()->path() ? 'active' : '' }}">
+                <a href="/payments">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Оплата</p>
+                </a>
+            </li>
+            <li class="{{ 'Teachers' == request()->path() ? 'active' : '' }}">
+                <a href="/teachers">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Учителя</p>
+                </a>
+            </li>
+            <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
+                <a href="/role-register">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Студенты</p>
+                </a>
+            </li>
+            <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
+                <a href="/role-register">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Студенты</p>
+                </a>
+            </li>
         </ul>
       </div>
     </div>

@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function registered()
     {
 
-        $users = User::all();
+        $users = User::where('usertype' , '=' , 'user');
 
 
         return view('admin.register' ,compact('users' ));
