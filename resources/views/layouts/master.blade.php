@@ -43,18 +43,25 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
-            <a href="/abouts">
-              <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>About Us</p>
-            </a>
-          </li>
-          <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
-            <a href="/role-register">
+          <li class="{{ 'user-register' == request()->path() ? 'active' : '' }}">
+            <a href="/user-register">
               <i class="now-ui-icons users_single-02"></i>
-              <p>Студенты</p>
+              <p>Users</p>
             </a>
           </li>
+            <li class="{{ 'student-register' == request()->path() ? 'active' : '' }}">
+                <a href="/student-register">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Student</p>
+                </a>
+            </li>
+          <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
+                <a href="/abouts">
+                    <i class="now-ui-icons ui-1_bell-53"></i>
+                    <p>Notes</p>
+                </a>
+          </li>
+
         </ul>
       </div>
     </div>

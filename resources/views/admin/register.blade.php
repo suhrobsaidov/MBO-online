@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Registered Roles
+    Users
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="/role-register" method="POST">
+                            <form action="/user-register" method="POST">
                              {{ csrf_field() }}
 
                             <div class="modal-body">
@@ -44,7 +44,7 @@
         <div class="col-md-12">
             <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> Role Register
+                        <h4 class="card-title"> Users
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</button>
                         </h4>
                         @if (session('status'))
@@ -99,10 +99,10 @@
                                 </td>
 
                                 <td>
-                                    <a href="/role-edit/{{ $user->id }}" class="btn btn-success">EDIT</a>
+                                    <a href="/user-edit/{{ $user->id }}" class="btn btn-success">EDIT</a>
                                 </td>
                                 <td>
-                                    <form action="/role-delete/{{ $user->id }}" method="post">
+                                    <form action="/user-delete/{{ $user->id }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger">DELETE</button>
@@ -118,137 +118,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-12">
-            <div class="card card-plain">
-                <div class="card-header">
-                    <h4 class="card-title"> Table on Plain Background</h4>
-                    <p class="category"> Here is a subtitle for this table</p>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class=" text-primary">
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Country
-                            </th>
-                            <th>
-                                City
-                            </th>
-                            <th class="text-right">
-                                Salary
-                            </th>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    Dakota Rice
-                                </td>
-                                <td>
-                                    Niger
-                                </td>
-                                <td>
-                                    Oud-Turnhout
-                                </td>
-                                <td class="text-right">
-                                    $36,738
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Minerva Hooper
-                                </td>
-                                <td>
-                                    Curaçao
-                                </td>
-                                <td>
-                                    Sinaai-Waas
-                                </td>
-                                <td class="text-right">
-                                    $23,789
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Sage Rodriguez
-                                </td>
-                                <td>
-                                    Netherlands
-                                </td>
-                                <td>
-                                    Baileux
-                                </td>
-                                <td class="text-right">
-                                    $56,142
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Philip Chaney
-                                </td>
-                                <td>
-                                    Korea, South
-                                </td>
-                                <td>
-                                    Overland Park
-                                </td>
-                                <td class="text-right">
-                                    $38,735
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Doris Greene
-                                </td>
-                                <td>
-                                    Malawi
-                                </td>
-                                <td>
-                                    Feldkirchen in Kärnten
-                                </td>
-                                <td class="text-right">
-                                    $63,542
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Mason Porter
-                                </td>
-                                <td>
-                                    Chile
-                                </td>
-                                <td>
-                                    Gloucester
-                                </td>
-                                <td class="text-right">
-                                    $78,615
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Jon Porter
-                                </td>
-                                <td>
-                                    Portugal
-                                </td>
-                                <td>
-                                    Gloucester
-                                </td>
-                                <td class="text-right">
-                                    $98,615
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
 @endsection
 
 

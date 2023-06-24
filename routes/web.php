@@ -27,17 +27,23 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
         return view('admin.dashboard');
     });
 
-    Route::get('/role-register', [App\Http\Controllers\Admin\DashboardController::class, 'registered'])->name('role-register');
-    Route::post('/role-register', [App\Http\Controllers\Admin\DashboardController::class, 'registerstore'])->name('role-register');
-    Route::get('/role-edit/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registeredit'])->name('role-edit');
-    Route::put('/role-register-update/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registerupdate'])->name('role-register-update');
-    Route::delete('/role-delete/{id}' , [App\Http\Controllers\Admin\DashboardController::class, 'registerdelete'])->name('role-delete');
-
+    //for users
+    Route::get('/user-register', [App\Http\Controllers\Admin\DashboardController::class, 'registered'])->name('user-register');
+    Route::post('/user-register', [App\Http\Controllers\Admin\DashboardController::class, 'registerstore'])->name('user-register');
+    Route::get('/user-edit/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registeredit'])->name('user-edit');
+    Route::put('/user-register-update/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'registerupdate'])->name('user-register-update');
+    Route::delete('/user-delete/{id}' , [App\Http\Controllers\Admin\DashboardController::class, 'registerdelete'])->name('user-delete');
+    //for notes
     Route::get('/abouts' , [App\Http\Controllers\Admin\AboutusController::class, 'index'])->name('abouts');
     Route::post('/save-aboutus', [App\Http\Controllers\Admin\AboutusController::class, 'store'])->name('save-abouts');
     Route::get('/about-us/{id}', [App\Http\Controllers\Admin\AboutusController::class, 'edit'])->name('about-us');
     Route::put('/abouts/{id}',  [App\Http\Controllers\Admin\AboutusController::class, 'update'])->name('abouts');
     Route::delete('/abouts/{id}' ,  [App\Http\Controllers\Admin\AboutusController::class, 'delete'])->name('abouts');
-
+    //for students
+    Route::get('/student-register' , [App\Http\Controllers\StudentController::class, 'index'])->name('student');
+    Route::post('/student-register', [App\Http\Controllers\StudentController::class, 'store'])->name('student-register');
+    Route::get('/student-edit/{id}', [App\Http\Controllers\StudentController::class, 'edit'])->name('student-edit');
+    Route::put('/student-register-update/{id}', [App\Http\Controllers\StudentController::class, 'update'])->name('student-register-update');
+    Route::delete('/student-delete/{id}' , [App\Http\Controllers\StudentController::class, 'delete'])->name('student-delete');
 });
 

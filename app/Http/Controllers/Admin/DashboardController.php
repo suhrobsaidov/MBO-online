@@ -32,13 +32,13 @@ class DashboardController extends Controller
         $users->usertype = $request->input('usertype');
         $users->update();
 
-        return redirect('/role-register')->with('status' , 'Your Data is Updated');
+        return redirect('/user-register')->with('status' , 'Your Data is Updated');
     }
     public function registerdelete($id)
     {
         $users = User::findOrFail($id);
         $users->delete();
-        return redirect('/role-register')->with('status' , 'Your Data is Deleted');
+        return redirect('/user-register')->with('status' , 'Your Data is Deleted');
     }
     public function registerstore(Request $request)
     {
@@ -54,6 +54,6 @@ class DashboardController extends Controller
 
 
 
-        return redirect('/role-register')->with('status','Data Added for Users');
+        return redirect('/user-register')->with('status','Data Added for Users');
     }
 }

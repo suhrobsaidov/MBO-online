@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Edit-Registered
+  Edit user
 @endsection
 
 @section('content')

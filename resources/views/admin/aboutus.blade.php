@@ -45,7 +45,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> About Us
+                    <h4 class="card-title"> Notes
                         <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                                 data-target="#exampleModal">Add
                         </button>
