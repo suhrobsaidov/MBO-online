@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
@@ -10,4 +11,9 @@ class User extends Authenticatable
         'phone',
         'password',
     ];
+    public function payments()
+    {
+        return $this->hasMany(Payments::class);
+
+    }
 }

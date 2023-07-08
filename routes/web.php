@@ -18,7 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+
+//payments
+
 Auth::routes();
+
+//for books
+Route::get('books',[App\Http\Controllers\BooksController::class , 'index'])->name('books');
+Route::post('books',[App\Http\Controllers\BooksController::class , 'store'])->name('books');
+//Route::delete('books-delete/{id}',[App\Http\Controllers\BooksController::class , 'destroy'])->name('books-delete');
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -39,11 +52,17 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::get('/about-us/{id}', [App\Http\Controllers\Admin\AboutusController::class, 'edit'])->name('about-us');
     Route::put('/abouts/{id}',  [App\Http\Controllers\Admin\AboutusController::class, 'update'])->name('abouts');
     Route::delete('/abouts/{id}' ,  [App\Http\Controllers\Admin\AboutusController::class, 'delete'])->name('abouts');
-    //payments
-    Route::get('payments' ,[\App\Http\Controllers\PaymentsController::class , 'index']);
-    Route::post('create-payment' ,[\App\Http\Controllers\PaymentsController::class , 'store']);
+
     //teachers
     Route::get('teachers' ,[\App\Http\Controllers\TeachersController::class , 'index']);
+
+
+    Route::get('/payments' ,[\App\Http\Controllers\PaymentsController::class , 'index']);
+    Route::get('/edit-payments/{id}',[\App\Http\Controllers\PaymentsController::class , 'edit']);
+    Route::post('/create-payments' ,[\App\Http\Controllers\PaymentsController::class , 'store']);
+    Route::put('/update-payments/{id}' ,[\App\Http\Controllers\PaymentsController::class , 'update']);
+    Route::delete('/delete-payments/{id}',[\App\Http\Controllers\PaymentsController::class , 'destroy']);
+
 
 
 

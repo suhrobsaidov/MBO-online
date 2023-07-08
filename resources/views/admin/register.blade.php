@@ -118,8 +118,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
+
 
 <!--        <div class="col-md-12">
             <div class="card card-plain">
@@ -251,7 +250,7 @@
         </div>-->
     </div>
     </div>
->>>>>>> b5bfe8c597fc6812087c0924099165f52b7b6a14
+
 @endsection
 
 

@@ -12,6 +12,7 @@ class DashboardController extends Controller
     {
 
         $users = User::where('usertype' , '=' , 'user');
+        $payments = User::with('payments')->get();
 
 
         return view('admin.register' ,compact('users' ));

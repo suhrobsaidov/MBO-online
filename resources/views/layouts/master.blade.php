@@ -79,6 +79,12 @@
                     <p>Студенты</p>
                 </a>
             </li>
+            <li class="{{ 'books' == request()->path() ? 'active' : '' }}">
+                <a href="/books">
+                    <i class="now-ui-icons users_single-02"></i>
+                    <p>Книги</p>
+                </a>
+            </li>
         </ul>
       </div>
     </div>
