@@ -10,6 +10,10 @@ class User extends Authenticatable
         'surname',
         'phone',
         'password',
+        'birthdate',
+        'cource',
+        'time',
+        'place'
     ];
     public function payments()
     {

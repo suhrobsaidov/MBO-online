@@ -35,6 +35,9 @@ Route::post('books',[App\Http\Controllers\BooksController::class , 'store'])->na
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//teachers
+Route::get('teachers' ,[\App\Http\Controllers\TeachersController::class , 'index']);
+
 Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::get('/dashboard',function(){
         return view('admin.dashboard');
@@ -53,8 +56,9 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::put('/abouts/{id}',  [App\Http\Controllers\Admin\AboutusController::class, 'update'])->name('abouts');
     Route::delete('/abouts/{id}' ,  [App\Http\Controllers\Admin\AboutusController::class, 'delete'])->name('abouts');
 
-    //teachers
-    Route::get('teachers' ,[\App\Http\Controllers\TeachersController::class , 'index']);
+
+//groups
+Route::get('/groups',[\App\Http\Controllers\GroupsController::class , 'index']);
 
 
     Route::get('/payments' ,[\App\Http\Controllers\PaymentsController::class , 'index']);

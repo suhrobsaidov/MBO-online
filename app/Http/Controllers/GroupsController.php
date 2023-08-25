@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Groups;
 use App\Http\Requests\StoreGroupsRequest;
 use App\Http\Requests\UpdateGroupsRequest;
+use Illuminate\Http\Request;
 
 class GroupsController extends Controller
 {
@@ -13,7 +14,8 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        //
+        $groups =Groups::all();
+        return view('admin.groups.index' ,compact('groups'));
     }
 
     /**
@@ -27,9 +29,16 @@ class GroupsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGroupsRequest $request)
+    public function store(Request $request)
     {
-        //
+       $group = new Groups();
+       $group->number=$request->input('number');
+       $group->time=$request->input('time');
+       $group->user_id =$request->input('user_id');
+        $group->save();
+        return response('Успешно Создана Группа ');
+
+
     }
 
     /**

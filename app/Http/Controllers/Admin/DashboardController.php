@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function registered()
     {
 
-        $users = User::where('usertype' , '=' , 'user');
+        $users = User::where('usertype' , '=' , 'user')->get();
         $payments = User::with('payments')->get();
 
 
@@ -31,6 +31,8 @@ class DashboardController extends Controller
         $users->surname = $request->input('surname');
         $users->phone = $request->input('phone');
         $users->usertype = $request->input('usertype');
+        $users->time = ' ';
+        $users->birthdate = ' ';
         $users->update();
 
         return redirect('/user-register')->with('status' , 'Your Data is Updated');

@@ -46,13 +46,13 @@
           <li class="{{ 'user-register' == request()->path() ? 'active' : '' }}">
             <a href="/user-register">
               <i class="now-ui-icons users_single-02"></i>
-              <p>Users</p>
+              <p>Посещение</p>
             </a>
           </li>
           <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
-                <a href="/abouts">
+                <a href="/groups">
                     <i class="now-ui-icons ui-1_bell-53"></i>
-                    <p>Notes</p>
+                    <p>Группа</p>
                 </a>
           </li>
             <li class="{{ 'payments' == request()->path() ? 'active' : '' }}">

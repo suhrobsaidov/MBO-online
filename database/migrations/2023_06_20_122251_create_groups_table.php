@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
+        $table->string('name');
+        $table->foreignID('cource_id');
+            $table->string('number');
+            $table->string('time');
             $table->timestamps();
         });
     }
